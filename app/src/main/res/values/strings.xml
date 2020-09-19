@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MadLevel3Task1</string>
+    <string name="app_name">Mad Level 3 Task1</string>
     <string name="start_title">Welcome to the Games Rating app!</string>
     <string name="sub_title">Click START to start rating :)</string>
     <string name="start_button">START</string>

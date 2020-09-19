@@ -1,5 +1,6 @@
 package com.example.madlevel3task1
 
+
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -22,11 +23,29 @@ class RatingFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_rating, container, false)
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //navigate to summary fragment when the button is clicked
+        btn_to_summary.setOnClickListener {
+            navigateToSummary()
+        }
+
         showRandomAssessableGame()
     }
+
+    private fun navigateToSummary() {
+
+        val args = Bundle()
+        args.putFloat(ARG_GAME_RATING, ratingBar_game.rating)
+        args.putString(ARG_GAME_NAME, txt_game.text.toString())
+
+        // navigate to the next (summary fragment) and pass the data (game rating and game name) in a bundle within the parameters
+        findNavController().navigate(R.id.action_ratingFragment_to_summaryFragment, args)
+    }
+
+
 
     // Show random game name in the txt_game textview
     private fun showRandomAssessableGame() {
